@@ -4,7 +4,18 @@
 	<meta charset="utf-8">
 	<script>
 		function setSearchEngine() {
-			console.log("setting search engine");
+
+			let radioButton = document.querySelector('input[name=engine]:checked');
+
+			let actions = {
+				'google': 'https://www.google.com/search',
+				'duckDuckGo': 'https://duckduckgo.com/',
+				'bing': 'https://www.bing.com/search',
+				'ask': 'https://www.ask.com/web'
+			}
+
+			document.getElementById('searchForm').action = actions[radioButton.value];
+			
 		}
 
 		window.addEventListener("load", function(){
